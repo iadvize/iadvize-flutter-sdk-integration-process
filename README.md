@@ -184,3 +184,25 @@ android {
   }
 }
 ```
+
+### Step 5 - Activate the SDK
+
+Add the IAdvize SDK import statement:
+
+```
+$ lib/main.dart
+
+import 'package:iadvize_flutter_sdk/iadvize_flutter_sdk.dart';
+```
+
+Then you can activate using the relevant API:
+
+```
+$ lib/main.dart
+
+IAdvizeSdk.activate(
+  projectId: projectId,
+  authenticationOption: authOption,
+  gdprOption: gdprOption,
+)
+```
