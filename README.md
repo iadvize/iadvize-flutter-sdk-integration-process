@@ -151,3 +151,18 @@ allprojects {
   }
 }
 ```
+
+#### Step 4.2 - Setup Kotlin
+
+The latest iAdvize Android SDK used Kotlin `1.8.10`. To avoid conflict between the Kotlin versions used in the Flutter dependencies, this version needs to be set in the Android configuration.
+
+In the project-level `android/build.gradle` file, update the Kotlin version in the `buildscript` block:
+
+```
+$ android/build.gradle
+
+buildscript {
+  // Update the Kotlin version
+  ext.kotlin_version = '1.8.10' // was 1.7.10
+}
+```
