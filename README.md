@@ -67,3 +67,16 @@ dependencies:
   cupertino_icons: ^1.0.2
   iadvize_flutter_sdk: ^2.10.1
 ```
+
+### Step 3 - Configure iOS project
+
+#### Step 3.1 - Define the minimum iOS platform
+
+The iAdvize iOS SDK supports iOS 12 and further, you must define the minimum iOS platform at the top of your `ios/Podfile` file:
+
+```
+$ ios/Podfile
+
+# Add this line
+platform :ios, '12.0'
+```
