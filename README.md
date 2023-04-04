@@ -47,3 +47,23 @@ To launch the app on a device run:
 ```
 flutter run lib/main.dart
 ```
+
+### Step 2 - Add the SDK Flutter plugin
+
+To integrate the iAdvize SDK Flutter Plugin inside the demo project, run the following command:
+
+```
+flutter pub add iadvize_flutter_sdk
+```
+
+This will add the dependency inside the `pubspec.yaml` file
+
+```
+$ pubspec.yaml
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  iadvize_flutter_sdk: ^2.10.1
+```
