@@ -130,3 +130,24 @@ $ ios/Runner/Info.plist
   </dict>
 </plist>
 ```
+
+### Step 4 - Configure Android project
+
+#### Step 4.1 - Add Android SDK dependency repository
+
+The iAdvize Android SDK is hosted on GitHub, this repository should be declared in the Android app in order for it to find the SDK artifacts:
+
+```
+$ android/build.gradle
+
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+
+    // Add those lines
+    maven { url "https://raw.github.com/iadvize/iadvize-android-sdk/master" }
+    maven { url "https://jitpack.io" }
+  }
+}
+```
