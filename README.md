@@ -98,6 +98,7 @@ post_install do |installer|
     end
   end
 end
+```
 
 Library evolution support allows developers of binary frameworks to make additive changes to the API of their framework while remaining binary compatible with previous versions.
 
