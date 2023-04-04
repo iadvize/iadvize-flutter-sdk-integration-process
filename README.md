@@ -80,3 +80,23 @@ $ ios/Podfile
 # Add this line
 platform :ios, '12.0'
 ```
+
+#### Step 3.2 - Enable Swift Library Evolution support
+
+Add this step inside the `post_install` hook at the end of the `Podfile` to enable Swift Library Evolution:
+
+```
+$ ios/Podfile
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    flutter_additional_ios_build_settings(target)
+
+    # Add those lines
+    target.build_configurations.each do |config|
+      config.build_settings['BUILD_LIBRARY_FOR_DISTRIBUTION'] = 'YES'
+    end
+  end
+end
+
+Library evolution support allows developers of binary frameworks to make additive changes to the API of their framework while remaining binary compatible with previous versions.
