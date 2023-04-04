@@ -39,7 +39,16 @@ class _HomeScreenState extends State<HomeScreen> {
     'authOption': AuthenticationOption.simple(userId: 'user-unique-identifier'),
 
     // TODO Replace with your own GDPR URL
-    'gdprOption': GDPROption.url(url: "http://replace.with.your.gdpr.url/")
+    'gdprOption': GDPROption.url(url: "http://replace.with.your.gdpr.url/"),
+
+    // TODO Replace with relevant targeting rule id
+    'targetingRuleId': "targeting-rule-uuid",
+
+    // TODO Replace with relevant targeting rule language
+    'targetingLanguage': 'en',
+
+    // TODO Replace with relevant targeting rule channel
+    'targetingRuleChannel': ConversationChannel.chat
   };
 
   bool _isSDKActivated = false;
@@ -65,6 +74,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if (_isSDKActivated) {
+      // When activated, trigger an engagement
+      IAdvizeSdk.setLanguage(idzConfig['targetingLanguage']);
+      IAdvizeSdk.activateTargetingRule(
+        TargetingRule(
+          uuid: idzConfig['targetingRuleId'],
+          channel: idzConfig['targetingRuleChannel'],
+        ),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(title: Text(widget.title)),
       body: Center(

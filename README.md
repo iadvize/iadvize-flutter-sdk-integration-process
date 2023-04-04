@@ -206,3 +206,20 @@ IAdvizeSdk.activate(
   gdprOption: gdprOption,
 )
 ```
+
+### Step 6 - Trigger engagement
+
+Once the SDK is activated you can engage the visitor using the relevant API:
+
+```
+$ lib/main.dart
+IAdvizeSDK.setLanguage("targetingLanguage");
+IAdvizeSdk.activateTargetingRule(
+  TargetingRule(
+    uuid: 'targetingRuleId',
+    channel: ConversationChannel.chat,
+  ),
+);
+```
+
+This will display the Default Floating Button that leads to the Chatbox.
