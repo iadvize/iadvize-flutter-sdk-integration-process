@@ -223,3 +223,9 @@ IAdvizeSdk.activateTargetingRule(
 ```
 
 This will display the Default Floating Button that leads to the Chatbox.
+
+### Step X - Developer Platform
+
+To go further in your integration you will need to read the SDK documentation available in our [Developer Platform](https://developers.iadvize.com/documentation/mobile-sdk#flutter-integration-guide).
+
+This covers a wide range of the use cases you may have (chatbox configuration, custom button, notifications, transactions, custom data registration...)
