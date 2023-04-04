@@ -166,3 +166,21 @@ buildscript {
   ext.kotlin_version = '1.8.10' // was 1.7.10
 }
 ```
+
+#### Step 4.3 - Define the minimum Android platform
+
+The iAdvize Android SDK supports Android API 21 and further, you must define the minimum supported API inside the `android/build.gradle` file:
+
+```
+$ android/build.gradle
+
+android {
+  defaultConfig {
+    applicationId "com.example.integration_demo_app"
+    minSdkVersion 21 // was minSdkVersion flutter.minSdkVersion
+    targetSdkVersion 33 // was targetSdkVersion flutter.targetSdkVersion
+    versionCode flutterVersionCode.toInteger()
+    versionName flutterVersionName
+  }
+}
+```
